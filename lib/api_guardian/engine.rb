@@ -3,6 +3,7 @@
 require 'doorkeeper'
 require 'doorkeeper/jwt'
 require 'doorkeeper/grants_assertion'
+require 'controllers/doorkeeper/application_metal_controller'
 require 'api_guardian/doorkeeper/helpers'
 require 'api_guardian/doorkeeper/otp_validation'
 require 'api_guardian/doorkeeper/jwt_validation'

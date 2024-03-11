@@ -7,14 +7,14 @@ module Doorkeeper
       def do_not_reuse_access_token
         @config.instance_variable_set('@reuse_access_token', false)
       end
-
-      # The controller Doorkeeper::ApplicationMetalController inherits from.
-      # Defaults to ActionController::API.
-      #
-      # @param base_metal_controller [String] the name of the base controller
-      option :base_metal_controller,
-             default: "ApiGuardian::BaseMetalController"
     end
+
+    # The controller Doorkeeper::ApplicationMetalController inherits from.
+    # Defaults to ActionController::API.
+    #
+    # @param base_metal_controller [String] the name of the base controller
+    option :base_metal_controller,
+           default: "ApiGuardian::BaseMetalController"
   end
 end
 

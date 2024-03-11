@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 require 'doorkeeper'
-require 'doorkeeper-jwt'
+require 'doorkeeper/jwt'
 require 'doorkeeper/grants_assertion'
 require 'api_guardian/doorkeeper/helpers'
 require 'api_guardian/doorkeeper/otp_validation'
@@ -27,6 +29,7 @@ module ApiGuardian
     end
 
     config.middleware.use ApiGuardian::Middleware::CatchParseErrors
+
 
     initializer 'api_guardian.doorkeeper_helpers' do
       ActiveSupport.on_load(:action_controller) do

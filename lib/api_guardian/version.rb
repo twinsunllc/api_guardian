@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 module ApiGuardian
-  VERSION = '1.0.2-ts'
+  VERSION = '1.0.3-ts'
 end

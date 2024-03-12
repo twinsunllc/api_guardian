@@ -107,7 +107,7 @@ describe ApiGuardian::Stores::Base do
       it 'updates a record' do
         attributes = {}
         a_user = instance_double(ApiGuardian::User)
-        expect(a_user).to receive(:update_attributes!).with(attributes)
+        expect(a_user).to receive(:update!).with(attributes)
 
         subject.update(a_user, attributes)
       end

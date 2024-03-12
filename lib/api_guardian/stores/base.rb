@@ -41,7 +41,7 @@ module ApiGuardian
       end
 
       def update(resource, attributes)
-        resource.update_attributes!(attributes)
+        resource.update!(attributes)
         resource
       end
 

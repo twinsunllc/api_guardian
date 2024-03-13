@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ApiGuardian
   module Stores
     class Base
@@ -39,7 +41,7 @@ module ApiGuardian
       end
 
       def update(resource, attributes)
-        resource.update_attributes!(attributes)
+        resource.update!(attributes)
         resource
       end
 

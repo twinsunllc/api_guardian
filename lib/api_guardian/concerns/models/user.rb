@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'active_support/concern'
 
 module ApiGuardian
@@ -9,7 +11,6 @@ module ApiGuardian
         included do
           self.table_name = 'api_guardian_users'
 
-          acts_as_paranoid
           has_secure_password
           has_one_time_password
 
@@ -20,7 +21,7 @@ module ApiGuardian
 
           validates :email, uniqueness: true, allow_nil: true
           validates :email, presence: true, unless: proc { |u| u.phone_number.present? }
-          validates :phone_number, uniqueness: true, case_sensitive: false, allow_nil: true
+          validates :phone_number, uniqueness: { case_sensitive: false }, allow_nil: true
           validates :phone_number, presence: true, unless: proc { |u| u.email.present? }
           validates_with ApiGuardian::Validators::PasswordLengthValidator, if: :password
           validates_with ApiGuardian::Validators::PasswordScoreValidator, if: :password
@@ -47,7 +48,7 @@ module ApiGuardian
 
           def guest?
             if email
-              self.email.include? "application-guest.com"
+              self.email.include? 'application-guest.com'
             else
               false
             end

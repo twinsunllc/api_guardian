@@ -1,4 +1,4 @@
-require 'api_guardian/helpers/facebook'
+# frozen_string_literal: true
 
 module ApiGuardian
   module Helpers

@@ -27,13 +27,5 @@ module ApiGuardian
     end
 
     config.middleware.use ApiGuardian::Middleware::CatchParseErrors
-
-    initializer 'api_guardian.doorkeeper_helpers' do
-      ActiveSupport.on_load(:action_controller) do
-        Doorkeeper::ApplicationMetalController.send(:include, AbstractController::Callbacks)
-        Doorkeeper::ApplicationMetalController.send(:include, ActionController::Rescue)
-        Doorkeeper::ApplicationMetalController.send(:include, ApiGuardian::DoorkeeperHelpers)
-      end
-    end
   end
 end

@@ -20,7 +20,7 @@ module ApiGuardian
 
           validates :email, uniqueness: true, allow_nil: true
           validates :email, presence: true, unless: proc { |u| u.phone_number.present? }
-          validates :phone_number, uniqueness: true, case_sensitive: false, allow_nil: true
+          validates :phone_number, uniqueness: { case_sensitive: false }, allow_nil: trueen
           validates :phone_number, presence: true, unless: proc { |u| u.email.present? }
           validates_with ApiGuardian::Validators::PasswordLengthValidator, if: :password
           validates_with ApiGuardian::Validators::PasswordScoreValidator, if: :password

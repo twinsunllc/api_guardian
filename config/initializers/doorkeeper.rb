@@ -1,10 +1,15 @@
+require "doorkeeper/config/abstract_builder"
+
 module Doorkeeper
   class Config
-    class Builder
+    class Builder < AbstractBuilder
       def do_not_reuse_access_token
         @config.instance_variable_set('@reuse_access_token', false)
       end
     end
+
+    option :base_metal_controller,
+           default: "ApiGuardian::BaseMetalController"
   end
 end
 

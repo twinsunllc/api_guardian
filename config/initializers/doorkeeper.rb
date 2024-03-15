@@ -14,8 +14,15 @@ module Doorkeeper
 end
 
 Doorkeeper.configure do
+
+end
+
+Doorkeeper.configure do
   # Change the ORM that doorkeeper will use (needs plugins)
   orm :active_record
+
+  # After upgrading doorkeeper will cause an error with grant_type :password
+  skip_client_authentication_for_password_grant true
 
   # This block will be called to check whether the resource owner is authenticated or not.
   resource_owner_from_credentials do

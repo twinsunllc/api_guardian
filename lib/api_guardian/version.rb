@@ -1,3 +1,3 @@
 module ApiGuardian
-  VERSION = '1.0.11-ts'
+  VERSION = '1.0.12-ts'
 end

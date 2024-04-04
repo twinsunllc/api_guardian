@@ -9,11 +9,12 @@ module ApiGuardian
         included do
           def render_error(status, code, title, detail, exception = nil)
             error = construct_error status, code, title, detail
-            if Rails.env.production?
-              render json: { errors: [error] }, status: status
-            else
-              non_production_render error, exception, status
-            end
+            render json: { errors: [error] }, status: status
+            # if Rails.env.production?
+            #   render json: { errors: [error] }, status: status
+            # else
+            #   non_production_render error, exception, status
+            # end
           end
 
           protected

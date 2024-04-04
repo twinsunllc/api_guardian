@@ -119,8 +119,8 @@ module ApiGuardian
             record.errors.each do |error|
               next if used_fields.include? error.to_s
               formatted_error = {
-                field: error.to_s,
-                detail: record.errors[error][0]
+                field: error.attribute,
+                detail: error.detail
               }
               formatted_errors.push formatted_error
               used_fields.push error.to_s

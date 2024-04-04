@@ -39,10 +39,6 @@ module ApiGuardian
               render json: { errors: [error] }, status: status
             end
           end
-
-          def render(**_)
-            return super if defined?(super)
-          end
         end
       end
     end

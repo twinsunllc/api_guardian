@@ -16,6 +16,7 @@ module ApiGuardian
           # rubocop:disable Metrics/MethodLength
           def api_error_handler(exception)
             ApiGuardian.logger.error 'ApiError: ' + exception.class.name + ' - ' + exception.message
+            ApiGuardian.logger.error exception.backtrace
 
             if exception.is_a? Pundit::NotAuthorizedError
               user_not_authorized

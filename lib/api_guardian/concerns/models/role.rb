@@ -15,11 +15,11 @@ module ApiGuardian
           validates :name, uniqueness: true, presence: true
           validates :default, uniqueness: true, if: proc { |r| r.default? }
 
-          scope :default_roles, -> { where(default: true) }
+          scope :default, -> { where(default: true) }
 
           # Class Methods
           def self.default_role
-            default_roles.first
+            default.first
           end
 
           def self.policy_class

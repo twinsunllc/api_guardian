@@ -1,6 +1,6 @@
 module ApiGuardian
   class ApiController < ActionController::API
-    include ::Pundit
+    include Pundit::Authorization
     include ApiGuardian::Concerns::ApiErrors::Handler
     include ApiGuardian::Concerns::ApiRequest::Validator
 

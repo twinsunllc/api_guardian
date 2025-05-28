@@ -17,10 +17,6 @@ module ApiGuardian
 
           scope :default_roles, -> { where(default: true) }
 
-          # Class Methods
-          def self.default_role
-            default_roles.first
-          end
 
           def self.policy_class
             ApiGuardian::Policies::RolePolicy

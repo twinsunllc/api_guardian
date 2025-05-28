@@ -18,7 +18,7 @@ module ApiGuardian
           scope :default_roles, -> { where(default: true) }
 
           # Class Methods
-          def self.default
+          def self.default_role
             default_roles.first
           end
 
